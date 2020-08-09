@@ -1,0 +1,771 @@
+@import "functions";
+@import "variables";
+
+$font-family-sans-serif: 'Lato', sans-serif;
+$enable-responsive-font-sizes: true;
+
+$green: #998A3E;
+$light-green: #BFAC4E;
+$dark-green: #73672F;
+$blue: #5F7285;
+$light-blue: #778EA6;
+$dark-blue: #475564;
+$grey: #8C857B;
+$dark-grey: #403C38;
+$light-grey: #BFB5A8;
+$white: #F2EBDF;
+$black: #262523;
+$dark: $black;
+
+$theme-colors: (
+    "primary": $green,
+    "secondary": $blue,
+    "success": $light-green,
+    "info": $white,
+    "warning": $dark-green,
+    "danger": $dark-blue,
+);
+
+$link-color: $green;
+$link-hover-color: darken($link-color, 15%);
+
+$nav-link-padding-x: 2rem;
+ 
+$text-muted: $grey;
+$text-danger: $dark-blue !important;
+
+$progress-height: 2rem;
+
+@import "bootstrap";
+
+/**************************
+GLOBAL STYLE RULES
+**************************/
+html,body
+{
+    max-width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a.btn {
+    color: white;
+}
+
+a.btn:hover, button:hover {
+    color: white;
+    animation: pulse;
+    animation-duration: 2s;
+}
+
+h1, h2, h3 {
+    font-family: 'Eczar', serif;
+    color: $blue;  
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.618rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.618rem;
+    font-weight: 600;
+}
+
+.h-50 {
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.h-65 {
+    min-height: 65vh;
+}
+
+.h-80 {
+    min-height: 80vh;
+}
+
+.h-100 {
+    min-height: inherit;
+}
+
+.w-60 {
+    min-width: 60%;
+    width: 60%;
+    max-width: 60%;
+}
+
+.w-80 {
+    min-width: 80%;
+    width: 80%;
+    max-width: 80%;
+}
+
+.w-100 {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.breadcrumb {
+    background: none;
+}
+
+/*****************************
+HEADER STYLE RULES
+*****************************/
+.nav-container {
+    max-width: 100%;
+}
+.navbar {
+    box-shadow: 0px 3px 3px $gray-800;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.navbar-light .navbar-nav .nav-item > .nav-link {
+    color: $dark-blue;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+#navbar-logo {
+    max-height: 80px;
+    width: auto;
+}
+.nav-item.active {
+    font-weight: bold;
+}
+
+.nav-item a.nav-link {
+    color: $light-green !important;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+    text-shadow: 1px 1px lighten($green, 30%);
+    border-bottom: 2px solid $green;
+}
+
+header h1.display-4 {
+    font-weight: bolder;
+}
+
+#header.masthead {
+    background: linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)),url("../img/hero2000x1080.jpg") center/cover no-repeat;
+    height: 100vh;
+}
+
+.hero-text {
+    background: linear-gradient(rgba(191,172,78,.7),rgba(191,172,78,.7));
+    min-height: 30%;
+}
+
+.hero-text h1, .hero-text p {
+    color: $white;
+}
+
+.header-par {
+    color: $blue;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+/*****************************
+SKILLS SECTION STYLES
+*****************************/
+#skills {
+    background: url("../img/patterns/DarkHexBackground2000x1080.jpg") center/cover no-repeat;
+}
+
+#skills h2 {
+    color: $light-green;
+}
+
+.progress-bar {
+    color: $white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+i.fab, i.far, i.devicon-cplusplus-plain {
+    color: $light-green;
+}
+
+i.devicon-cplusplus-plain {
+    font-size: 3rem;
+}
+
+/************************************
+ABOUT SECTION STYLES
+************************************/
+#about {
+    background: url("../img/patterns/GreenHexBackground2000x1080.jpg") center/cover no-repeat;
+}
+
+#about, #about h1 {
+    color: $dark-green;
+}
+
+
+#about img {
+    height: 250px;
+    
+}
+
+#about {
+    i {
+        color: $green;
+    }
+
+    a i {
+        color: $secondary;
+    }
+
+    & a i:hover {
+        color: darken($secondary, 10%);
+    }
+}
+
+/************************************
+PORTFOLIO SECTION STYLES
+************************************/
+
+#portfolio {
+    background: url("../img/patterns/BlueHexBackground2000x1080.jpg") center/cover no-repeat;
+}
+
+#portfolio h1 {
+    color: $dark-blue;
+}
+
+#portfolio .card {
+    border: 3px solid $blue;
+
+    .card-body {
+        justify-content: space-between;
+    }
+}
+
+#portfolio .card-title {
+    font-size: 1.5rem;
+}
+
+/************************************
+INDIVIDUAL PORTFOLIO ITEM STYLES
+************************************/
+.p-item {
+    background: url("../img/patterns/GreenHexBackground2000x1080.jpg") center repeat;
+    color: $dark-green;
+    min-height: 80vh;
+    text-align: left;
+
+    h1, h2, h3 {
+        color: $dark-green;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+
+        &.lgScreen {
+            display: block;
+        }
+
+        &.smScreen {
+            display: none;
+        }
+    }
+    
+    h3 {
+        font-size: 1rem;
+        font-family: $font-family-sans-serif;
+        text-decoration: underline;
+    }
+
+    h3.course, p.course {
+        display: inline-block;
+    }
+
+    img {
+        border: 3px solid $green;
+        align-self: flex-start;
+        justify-self: flex-start;
+    }
+
+    .icon-row, .button-row{
+        justify-content: flex-start;
+    }
+
+    .icon-row i {
+        color: $dark-green;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        row-gap: 10px;
+        column-gap: 70px;
+        //grid-template-rows: minmax(min-content, 1fr);
+        //grid-auto-rows: minmax(min-content, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+        //grid-auto-flow: row;
+      }
+      .one {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      .two { 
+        text-align: left;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+      }
+      .three {
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+      }
+      .four {
+        text-align: left;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+      }
+
+      .color-block {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 2%;
+    }
+}
+
+#ogdenfirst {
+    .block-1 {
+        background-color: #DE23A3;
+    }
+
+    .block-2 {
+        background-color: #B01C81;
+    }
+
+    .block-3 {
+        background-color: #8943BD;
+    }
+
+    .block-4 {
+        background-color: #5F2E85;
+    }
+    
+    .block-5 {
+        background-color: #4DDBC4;
+    }
+        
+    .block-6 {
+        background-color: #3AA694;
+    }
+            
+    .block-7 {
+        background-color: #77BD43;
+    }
+                
+    .block-8 {
+        background-color: #508538;
+    }
+                    
+    .block-9 {
+        background-color: #FFFFFF;
+    }
+                        
+    .block-10 {
+        background-color: #E0E1E2;
+    }
+                     
+    .block-11 {
+        background-color: #8D8F91;
+    }
+                         
+    .block-12 {
+        background-color: #707070;
+    }
+                             
+    .block-13 {
+        background-color: #1B1C1D;
+    }
+}
+
+#salazar {
+    .block-1 {
+        background-color: #FF605B;
+    }
+
+    .block-2 {
+        background-color: #FF0303;
+    }
+
+    .block-3 {
+        background-color: #C40202;
+    }
+
+    .block-4 {
+        background-color: #87DED4;
+    }
+    
+    .block-5 {
+        background-color: #41C4BC;
+    }
+        
+    .block-6 {
+        background-color: #329690;
+    }
+            
+    .block-7 {
+        background-color: #FFAF4F;
+    }
+                
+    .block-8 {
+        background-color: #FF9A3E;
+    }
+                    
+    .block-9 {
+        background-color: #FF8E0A;
+    }
+                        
+    .block-10 {
+        background-color: #B1A2F1;
+    }
+                     
+    .block-11 {
+        background-color: #9678EB;
+    }
+                         
+    .block-12 {
+        background-color: #8062D1;
+    }
+                             
+    .block-13 {
+        background-color: #FF87AC;
+    }
+
+    .block-14 {
+        background-color: #FC6091;
+    }
+    
+    .block-15 {
+        background-color: #E05581;
+    }
+        
+    .block-16 {
+        background-color: #94E3FF;
+    }
+            
+    .block-17 {
+        background-color: #38DCFF;
+    }
+                
+    .block-18 {
+        background-color: #2DC5EB;
+    }
+}
+
+#horizon {
+    .block-1 {
+        background-color: #95B3BF;
+    }
+
+    .block-2 {
+        background-color: #5A798C;
+    }
+
+    .block-3 {
+        background-color: #253C59;
+    }
+
+    .block-4 {
+        background-color: #BFA004;
+    }
+    
+    .block-5 {
+        background-color: #BF8D30;
+    }
+        
+    .block-6 {
+        background-color: #FEFFFA;
+    }
+}
+
+#rent {
+    .block-1 {
+        background-color: #BEE645;
+    }
+
+    .block-2 {
+        background-color: #A1C33A;
+    }
+
+    .block-3 {
+        background-color: #79910D;
+    }
+
+    .block-4 {
+        background-color: #0BA2E0;
+    }
+    
+    .block-5 {
+        background-color: #097EB0;
+    }
+        
+    .block-6 {
+        background-color: #054E6E;
+    }
+            
+    .block-7 {
+        background-color: #FEF5DB;
+    }
+            
+    .block-8 {
+        background-color: #FAC52D;
+    }
+                
+    .block-9 {
+        background-color: #D9D9D9;
+    }
+                
+    .block-10 {
+        background-color: #333333;
+    }
+}
+
+/************************************
+CONTACT SECTION STYLES
+************************************/
+#contact {
+    background: url("../img/patterns/BlueHexBackground2000x1080.jpg") center/cover no-repeat;
+
+    h1 {
+        color: $dark-blue;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .form-control {
+        width: 50%;
+    }
+
+    .wrapper {
+        background: linear-gradient(rgba(95, 114, 133, .7),rgba(95, 114, 133, .7));
+    }
+
+}
+
+/************************************
+FOOTER STYLES
+************************************/
+
+footer {
+    color: $green;
+
+    & a i:hover {
+        color: darken($green, 5%);
+    }
+}
+
+/***********************************
+MEDIA QUERIES
+***********************************/
+@media screen and (max-width: 1024px) {
+    html,body
+    {
+        max-width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: auto;
+    }
+
+    #about, #portfolio, #contact, .p-item {
+        min-height: 90vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #header.masthead {
+        background-image: linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)),url("../img/hero800x1200.jpg");
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    h4 {
+        font-family: 'Assistant', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .hero-text {
+        background: linear-gradient(rgba(191,172,78,.7),rgba(191,172,78,.7));
+        min-height: 35%;
+    }
+
+    #skills{
+        background: url("../img/patterns/DarkHexBackground800x12000.jpg") center/cover no-repeat;
+        .row .col-3 {
+            padding-bottom: 2%;
+        }
+        .progress-bar {
+            font-size: .75rem;
+        }
+    }
+
+    #about {
+        background: url("../img/patterns/GreenHexBackground800x1200.jpg") center/cover no-repeat;
+
+        & .button-row, & .icon-row {
+            justify-content: center;
+        }
+
+        & .icon-row i {
+            padding-bottom: 2%;
+        }
+    }
+
+    #portfolio{
+        background: url("../img/patterns/BlueHexBackground800x1200.jpg") center/cover no-repeat;
+
+        & > .container {
+            width: 100%;
+    
+            & .row {
+                padding-left: 2.5rem !important;
+                padding-right: 2.5rem !important;
+            }
+        }
+
+    }
+
+    .p-item {
+        background: url("../img/patterns/GreenHexBackground800x1200.jpg") center/cover no-repeat;
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+
+            &.lgScreen {
+                display: none;
+            }
+
+            &.smScreen {
+                display: block;
+            }
+        }
+    
+        img {
+            margin: 0 auto;
+            border: 3px solid $green;
+        }
+    
+        .icon-row, .button-row{
+            justify-content: center;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            row-gap: 10px;
+            column-gap: 0;
+            grid-auto-rows: minmax(50px, auto);
+          }
+          .one {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+          }
+          .two { 
+            text-align: left;
+            grid-column: 1 / 2;
+            grid-row: 3 / 9;
+          }
+          .three {
+            grid-column: 1 / 2;
+            grid-row: 9 / 11;
+          }
+          .four {
+            text-align: left;
+            grid-column: 1 / 2;
+            grid-row: 11 / 14;
+          }
+          .five {
+            grid-column: 1 / 2;
+            grid-row: 14 / 16;
+          }
+    }
+
+    #contact {
+        background: url("../img/patterns/BlueHexBackground800x1200.jpg") center/cover no-repeat;
+    
+        .form-control {
+            width: 80%;
+        }
+
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-size: 1rem;
+    }
+
+    .hero-text {
+        padding-bottom: 3%;
+    }
+}
+
